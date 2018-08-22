@@ -6,6 +6,7 @@ import static org.hamcrest.Matchers.greaterThan;
 import static org.junit.Assume.assumeTrue;
 
 import com.springuni.metrics.TwitterFollowersHandlerIT.TestConfig;
+import lombok.extern.slf4j.Slf4j;
 import org.junit.Assert;
 import org.junit.Test;
 import org.junit.runner.RunWith;
@@ -16,6 +17,7 @@ import org.springframework.core.env.Environment;
 import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.junit4.SpringRunner;
 
+@Slf4j
 @RunWith(SpringRunner.class)
 @ContextConfiguration(classes = {TestConfig.class})
 public class TwitterFollowersHandlerIT {
@@ -34,7 +36,7 @@ public class TwitterFollowersHandlerIT {
     assumeTrue("access-token-secret", environment.containsProperty("twitter.access-token-secret"));
 
     int followers = twitterFollowersHandler.handle(now(), emptyMap());
-
+    log.info("Followers count: {}", followers);
     Assert.assertThat(followers, greaterThan(0));
   }
 
