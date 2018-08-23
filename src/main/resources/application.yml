@@ -4,3 +4,7 @@ twitter:
   consumer-secret: ${TWITTER_CONSUMER_SECRET}
   access-token: ${TWITTER_ACCESS_TOKEN}
   access-token-secret: ${TWITTER_ACCESS_TOKEN_SECRET}
+
+facebook:
+  page-name: ${FACEBOOK_PAGE_NAME}
+  page-access-token: ${FACEBOOK_PAGE_ACCESS_TOKEN}
