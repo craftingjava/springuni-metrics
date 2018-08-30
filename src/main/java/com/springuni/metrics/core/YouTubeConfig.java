@@ -1,4 +1,4 @@
-package com.springuni.metrics;
+package com.springuni.metrics.core;
 
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.context.annotation.Configuration;
