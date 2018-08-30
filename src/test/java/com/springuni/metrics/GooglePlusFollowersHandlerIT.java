@@ -2,21 +2,21 @@ package com.springuni.metrics;
 
 import static java.time.LocalDate.now;
 import static java.util.Collections.emptyMap;
-import static org.hamcrest.Matchers.greaterThanOrEqualTo;
-import static org.junit.Assert.*;
+import static org.hamcrest.Matchers.greaterThan;
+import static org.junit.Assert.assertThat;
 
 import com.google.api.client.googleapis.services.CommonGoogleClientRequestInitializer;
 import com.google.api.client.googleapis.services.GoogleClientRequestInitializer;
 import com.google.api.client.http.javanet.NetHttpTransport;
 import com.google.api.client.json.jackson2.JacksonFactory;
 import com.google.api.services.plus.Plus;
-import com.google.api.services.youtube.YouTube;
 import org.junit.Before;
 import org.junit.Test;
+import org.springframework.messaging.Message;
 
 public class GooglePlusFollowersHandlerIT {
 
-  private GooglePlusFollowersHandler googlePlusFollowersHandler;
+  private SocialFollowersHandler googlePlusFollowersHandler;
 
   @Before
   public void setUp() {
@@ -34,8 +34,8 @@ public class GooglePlusFollowersHandlerIT {
 
   @Test
   public void handle() {
-    int followers = googlePlusFollowersHandler.handle(now(), emptyMap());
-    assertThat(followers, greaterThanOrEqualTo(0));
+    Message<SocialFollowerCount> followerMessage = googlePlusFollowersHandler.handle(now(), emptyMap());
+    assertThat(followerMessage.getPayload().getFollowers(), greaterThan(0));
   }
 
 }

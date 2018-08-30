@@ -1,21 +1,24 @@
 package com.springuni.metrics;
 
+import static com.springuni.metrics.SocialNetwork.YOUTUBE;
+
 import com.google.api.services.youtube.YouTube;
 import com.google.api.services.youtube.model.ChannelListResponse;
 import java.io.IOException;
-import java.time.LocalDate;
-import java.util.Map;
-import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 
 @Slf4j
-@RequiredArgsConstructor
-public class YouTubeFollowersHandlerImpl implements YouTubeFollowersHandler {
+public class YouTubeFollowersHandlerImpl extends AbstractSocialFollowersHandler {
 
   private final YouTube youTube;
 
+  public YouTubeFollowersHandlerImpl(YouTube youTube) {
+    super(YOUTUBE);
+    this.youTube = youTube;
+  }
+
   @Override
-  public Integer handle(LocalDate payload, Map<String, Object> headers) {
+  protected int fetchFollowers() {
     try {
       YouTube.Channels.List request = youTube.channels()
           .list("statistics")
