@@ -6,11 +6,11 @@ import com.google.api.services.plus.Plus;
 import com.google.api.services.plus.model.Person;
 import java.io.IOException;
 
-public class GooglePlusFollowersHandlerImpl extends AbstractSocialFollowersHandler {
+public class GooglePlusFollowerCountFetcherImpl extends AbstractSocialFollowerCountFetcher {
 
   private final Plus plus;
 
-  public GooglePlusFollowersHandlerImpl(Plus plus) {
+  public GooglePlusFollowerCountFetcherImpl(Plus plus) {
     super(GOOGLE_PLUS);
     this.plus = plus;
   }

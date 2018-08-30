@@ -14,9 +14,9 @@ import org.junit.Before;
 import org.junit.Test;
 import org.springframework.messaging.Message;
 
-public class YouTubeFollowersHandlerIT {
+public class YouTubeFollowerCountFetcherIT {
 
-  private SocialFollowersHandler youTubeFollowersHandler;
+  private SocialFollowerCountFetcher socialFollowerCountFetcher;
 
   @Before
   public void setUp() {
@@ -29,12 +29,12 @@ public class YouTubeFollowersHandlerIT {
         .setApplicationName(getClass().getName())
         .build();
 
-    youTubeFollowersHandler = new YouTubeFollowersHandlerImpl(youTube);
+    socialFollowerCountFetcher = new YouTubeFollowerCountFetcherImpl(youTube);
   }
 
   @Test
   public void handle() {
-    Message<SocialFollowerCount> followerMessage = youTubeFollowersHandler.handle(now(), emptyMap());
+    Message<SocialFollowerCount> followerMessage = socialFollowerCountFetcher.handle(now(), emptyMap());
     assertThat(followerMessage.getPayload().getFollowers(), greaterThan(0));
   }
 

@@ -11,14 +11,14 @@ import twitter4j.TwitterException;
 import twitter4j.TwitterFactory;
 import twitter4j.conf.ConfigurationBuilder;
 
-public class TwitterFollowersHandlerImpl
-    extends AbstractSocialFollowersHandler implements EnvironmentAware, InitializingBean {
+public class TwitterFollowerCountFetcherImpl
+    extends AbstractSocialFollowerCountFetcher implements EnvironmentAware, InitializingBean {
 
   private Environment environment;
   private String screenName;
   private Twitter twitter;
 
-  public TwitterFollowersHandlerImpl() {
+  public TwitterFollowerCountFetcherImpl() {
     super(TWITTER);
   }
 

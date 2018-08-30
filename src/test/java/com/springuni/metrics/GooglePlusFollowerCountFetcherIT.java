@@ -14,9 +14,9 @@ import org.junit.Before;
 import org.junit.Test;
 import org.springframework.messaging.Message;
 
-public class GooglePlusFollowersHandlerIT {
+public class GooglePlusFollowerCountFetcherIT {
 
-  private SocialFollowersHandler googlePlusFollowersHandler;
+  private SocialFollowerCountFetcher socialFollowerCountFetcher;
 
   @Before
   public void setUp() {
@@ -29,12 +29,12 @@ public class GooglePlusFollowersHandlerIT {
         .setApplicationName(getClass().getName())
         .build();
 
-    googlePlusFollowersHandler = new GooglePlusFollowersHandlerImpl(plus);
+    socialFollowerCountFetcher = new GooglePlusFollowerCountFetcherImpl(plus);
   }
 
   @Test
   public void handle() {
-    Message<SocialFollowerCount> followerMessage = googlePlusFollowersHandler.handle(now(), emptyMap());
+    Message<SocialFollowerCount> followerMessage = socialFollowerCountFetcher.handle(now(), emptyMap());
     assertThat(followerMessage.getPayload().getFollowers(), greaterThan(0));
   }
 

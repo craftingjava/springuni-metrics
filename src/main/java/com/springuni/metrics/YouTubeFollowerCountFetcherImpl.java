@@ -8,11 +8,11 @@ import java.io.IOException;
 import lombok.extern.slf4j.Slf4j;
 
 @Slf4j
-public class YouTubeFollowersHandlerImpl extends AbstractSocialFollowersHandler {
+public class YouTubeFollowerCountFetcherImpl extends AbstractSocialFollowerCountFetcher {
 
   private final YouTube youTube;
 
-  public YouTubeFollowersHandlerImpl(YouTube youTube) {
+  public YouTubeFollowerCountFetcherImpl(YouTube youTube) {
     super(YOUTUBE);
     this.youTube = youTube;
   }

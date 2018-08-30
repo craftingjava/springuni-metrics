@@ -5,11 +5,11 @@ import java.util.Map;
 import org.springframework.messaging.Message;
 import org.springframework.messaging.support.MessageBuilder;
 
-public abstract class AbstractSocialFollowersHandler implements SocialFollowersHandler {
+public abstract class AbstractSocialFollowerCountFetcher implements SocialFollowerCountFetcher {
 
   private final SocialNetwork socialNetwork;
 
-  public AbstractSocialFollowersHandler(SocialNetwork socialNetwork) {
+  public AbstractSocialFollowerCountFetcher(SocialNetwork socialNetwork) {
     this.socialNetwork = socialNetwork;
   }
 

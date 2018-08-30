@@ -12,19 +12,19 @@ import org.junit.Before;
 import org.junit.Test;
 import org.springframework.messaging.Message;
 
-public class FacebookFollowersHandlerIT {
+public class FacebookFollowerCountFetcherIT {
 
-  private SocialFollowersHandler facebookFollowersHandler;
+  private SocialFollowerCountFetcher socialFollowerCountFetcher;
 
   @Before
   public void setUp() {
     FacebookClient facebookClient = new DefaultFacebookClient("", "", Version.VERSION_3_1);
-    facebookFollowersHandler = new FacebookFollowersHandlerImpl(facebookClient);
+    socialFollowerCountFetcher = new FacebookFollowerCountFetcherImpl(facebookClient);
   }
 
   @Test
   public void handle() {
-    Message<SocialFollowerCount> followerMessage = facebookFollowersHandler.handle(now(), emptyMap());
+    Message<SocialFollowerCount> followerMessage = socialFollowerCountFetcher.handle(now(), emptyMap());
     assertThat(followerMessage.getPayload().getFollowers(), greaterThan(0));
   }
 
