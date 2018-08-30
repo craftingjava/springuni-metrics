@@ -1,7 +1,8 @@
-package com.springuni.metrics;
+package com.springuni.metrics.follower.twitter;
 
-import static com.springuni.metrics.SocialNetwork.TWITTER;
+import static com.springuni.metrics.follower.SocialNetwork.TWITTER;
 
+import com.springuni.metrics.follower.AbstractSocialFollowerCountFetcher;
 import java.util.Optional;
 import org.springframework.beans.factory.InitializingBean;
 import org.springframework.context.EnvironmentAware;

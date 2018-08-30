@@ -7,6 +7,9 @@ import static org.junit.Assert.assertThat;
 import static org.junit.Assume.assumeTrue;
 
 import com.springuni.metrics.TwitterFollowerCountFetcherIT.TestConfig;
+import com.springuni.metrics.follower.SocialFollowerCount;
+import com.springuni.metrics.follower.SocialFollowerCountFetcher;
+import com.springuni.metrics.follower.twitter.TwitterFollowerCountFetcherImpl;
 import lombok.extern.slf4j.Slf4j;
 import org.junit.Test;
 import org.junit.runner.RunWith;

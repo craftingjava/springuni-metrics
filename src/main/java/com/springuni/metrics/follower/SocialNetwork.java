@@ -1,4 +1,4 @@
-package com.springuni.metrics;
+package com.springuni.metrics.follower;
 
 public enum SocialNetwork {
 

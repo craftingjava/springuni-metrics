@@ -1,4 +1,4 @@
-package com.springuni.metrics;
+package com.springuni.metrics.follower;
 
 import static org.springframework.integration.IntegrationMessageHeaderAccessor.CORRELATION_ID;
 
@@ -15,7 +15,7 @@ import org.springframework.messaging.support.MessageBuilder;
 
 @Slf4j
 @Configuration
-public class MetricsFlow {
+public class SocialFollowerCountFlow {
 
   @Bean
   MessageChannel triggerChannel() {

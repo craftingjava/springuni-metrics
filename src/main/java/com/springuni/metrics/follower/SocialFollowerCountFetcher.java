@@ -1,4 +1,4 @@
-package com.springuni.metrics;
+package com.springuni.metrics.follower;
 
 import java.time.LocalDate;
 import java.util.Map;

@@ -1,9 +1,10 @@
-package com.springuni.metrics;
+package com.springuni.metrics.follower.google;
 
-import static com.springuni.metrics.SocialNetwork.GOOGLE_PLUS;
+import static com.springuni.metrics.follower.SocialNetwork.GOOGLE_PLUS;
 
 import com.google.api.services.plus.Plus;
 import com.google.api.services.plus.model.Person;
+import com.springuni.metrics.follower.AbstractSocialFollowerCountFetcher;
 import java.io.IOException;
 
 public class GooglePlusFollowerCountFetcherImpl extends AbstractSocialFollowerCountFetcher {

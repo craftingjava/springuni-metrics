@@ -1,10 +1,11 @@
-package com.springuni.metrics;
+package com.springuni.metrics.follower.facebook;
 
-import static com.springuni.metrics.SocialNetwork.FACEBOOK;
+import static com.springuni.metrics.follower.SocialNetwork.FACEBOOK;
 
 import com.restfb.FacebookClient;
 import com.restfb.Parameter;
 import com.restfb.types.Page;
+import com.springuni.metrics.follower.AbstractSocialFollowerCountFetcher;
 
 public class FacebookFollowerCountFetcherImpl extends AbstractSocialFollowerCountFetcher {
 

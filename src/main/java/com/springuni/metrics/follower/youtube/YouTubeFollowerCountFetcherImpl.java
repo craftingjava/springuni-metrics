@@ -1,9 +1,10 @@
-package com.springuni.metrics;
+package com.springuni.metrics.follower.youtube;
 
-import static com.springuni.metrics.SocialNetwork.YOUTUBE;
+import static com.springuni.metrics.follower.SocialNetwork.YOUTUBE;
 
 import com.google.api.services.youtube.YouTube;
 import com.google.api.services.youtube.model.ChannelListResponse;
+import com.springuni.metrics.follower.AbstractSocialFollowerCountFetcher;
 import java.io.IOException;
 import lombok.extern.slf4j.Slf4j;
 
